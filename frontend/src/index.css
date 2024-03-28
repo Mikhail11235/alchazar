@@ -1,0 +1,294 @@
+@font-face {
+  font-family: 'ChicagoFLF';
+  src: local('ChicagoFLF'), url(./fonts/ChicagoFLF.ttf) format('truetype');
+}
+
+/* Variables */
+:root {
+  --main-yellow: rgba(227, 255, 81, 0.75);
+  --main-gray: rgba(217, 217, 217, 1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: ChicagoFLF, Arial, sans-serif;
+}
+
+/* Fonts */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Navbar */
+nav {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+}
+
+.navbar__link {
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.navbar__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--main-yellow);
+  border: 2px solid black;
+}
+
+.navbar__left,
+.navbar__right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar__left {
+  gap: 10px;
+}
+
+.navbar__left img {
+  width: 200px;
+  height: 100%;
+  padding: 0px 20px;
+}
+
+.navbar__left div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0px 21px;
+  flex-wrap: nowrap;
+}
+
+.navbar__right {
+  width: 150px;
+  justify-content: center;
+}
+
+/* Search */
+.search {
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  top: 70px;
+  box-sizing: border-box;
+  padding: 10px 0;
+  background-color: var(--main-gray);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.search__input-container {
+  position: relative;
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  padding: 0px;
+  flex-wrap: nowrap;
+}
+
+.search__input-container input {
+  width: 800px;
+  height: 100%;
+  margin-right: -2px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: unset;
+  background-color: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(0, 0, 0, 1);
+}
+
+.search__input-container button {
+  width: 130px;
+  height: 100%;
+  background-color: rgba(4, 122, 241, 1);
+  border: 2px solid rgba(0, 0, 0, 1);
+  font-family: unset;
+  font-size: unset;
+  cursor: pointer;
+}
+
+.search__filter,
+.search__cart {
+  box-sizing: border-box;
+  border: 2px solid black;
+  height: 100%;
+  width: 50px;
+  font-family: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search__filter img {
+  width: 100%;
+}
+
+.login {
+  position: absolute;
+  width: 100%;
+  top: 72px;
+  padding: 70px;
+  box-sizing: border-box;
+}
+
+.login p {
+  position: absolute;
+}
+
+.login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.login__form input,
+.login__form button {
+  height: 30px;
+  width: 300px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  font-size: unset;
+
+}
+
+.login__form input {
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: unset;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.login__form button {
+  box-sizing: border-box;
+  font-family: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--main-gray);
+}
+
+
+/* Potions */
+.potions {
+  position: absolute;
+  width: 100%;
+  top: 140px;
+  display: flex;
+  gap: 20px 10px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.potions__card {
+  width: 200px;
+  height: 300px;
+  border-radius: 5px;
+  background-image: linear-gradient(rgba(36, 255, 249, 0.2813), rgba(36, 255, 249, 0.2813)), radial-gradient(circle, var(--main-yellow) 0%, rgba(177, 178, 181, 0) 100%), linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+  border: 2px solid white;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 10px 10px;
+}
+
+.potions__card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.potions__card:hover .potions__card-image {
+  animation: pulse 0.6s ease infinite;
+}
+
+.potions__card-image {
+  background-image: url('img/red_potion.png');
+  background-size: cover;
+  width: 80px;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.potions__card-details {
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+.potions__card-details p {
+  margin: 0;
+}
+
+.potions__card-cost {
+  font-size: 20px;
+}
+
+.potions__card-details button {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: rgba(242, 255, 0, 1);
+  border: 2px solid rgba(0, 255, 6, 1);
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-family: unset;
+}
+
+.potions__card-details button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(0, 0, 0, 1);
+}
